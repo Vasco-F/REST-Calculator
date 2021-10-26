@@ -27,47 +27,40 @@ public class CalculatorController {
         request.put("a", a);
         request.put("b", b);
 
-        String res = producer.send(request);
-
-        int result = a + b;
-
-        JSONObject response = new JSONObject();
-        response.put("result", result);
-
-        return res;
+        return producer.send(request);
     }
 
-    //TODO
     @GetMapping("/sub")
     public String getSub(@RequestParam(value = "a") int a, @RequestParam(value = "b") int b){
 
+        JSONObject request = new JSONObject();
+        request.put("op", "sub");
+        request.put("a", a);
+        request.put("b", b);
 
-        JSONObject response = new JSONObject();
-        response.put("result", 0);
-
-        return response.toString();
+        return producer.send(request);
     }
 
-    //TODO
     @GetMapping("/mult")
     public String getMult(@RequestParam(value = "a") int a, @RequestParam(value = "b") int b){
 
+        JSONObject request = new JSONObject();
+        request.put("op", "mult");
+        request.put("a", a);
+        request.put("b", b);
 
-        JSONObject response = new JSONObject();
-        response.put("result", 0);
-
-        return response.toString();
+        return producer.send(request);
     }
 
-    //TODO
     @GetMapping("/div")
     public String getDiv(@RequestParam(value = "a") int a, @RequestParam(value = "b") int b){
 
+        JSONObject request = new JSONObject();
+        request.put("op", "div");
+        request.put("a", a);
+        request.put("b", b);
 
-        JSONObject response = new JSONObject();
-        response.put("result", 0);
-
-        return response.toString();
+        return producer.send(request);
     }
     
 }
