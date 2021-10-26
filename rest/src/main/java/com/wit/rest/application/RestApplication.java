@@ -11,13 +11,13 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.wit"} )
 @EnableRabbit
-public class CalculatorApplication {
+public class RestApplication {
 
-	@Value("${queue.calculator.name")
+	@Value("${queue.calculator.name}")
 	private String calculatorQueue;
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculatorApplication.class, args);
+		SpringApplication.run(RestApplication.class, args);
 	}
 
 	@Bean
