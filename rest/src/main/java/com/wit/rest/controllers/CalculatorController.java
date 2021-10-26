@@ -27,14 +27,14 @@ public class CalculatorController {
         request.put("a", a);
         request.put("b", b);
 
-        producer.send(request);
+        String res = producer.send(request);
 
         int result = a + b;
 
         JSONObject response = new JSONObject();
         response.put("result", result);
 
-        return response.toString();
+        return res;
     }
 
     //TODO

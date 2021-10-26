@@ -13,8 +13,8 @@ public class Receiver {
     private CalculatorService calculatorService;
 
     @RabbitListener(queues = {"${queue.calculator.name}"})
-    public void receive(@Payload String message){
+    public String receive(@Payload String message){
         System.out.println("Received message: " + message);
-        // calculatorService.handleOperation(message);
+        return calculatorService.handleOperation(message);
     }
 }

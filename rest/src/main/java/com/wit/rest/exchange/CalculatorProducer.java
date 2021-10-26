@@ -15,8 +15,11 @@ public class CalculatorProducer {
     @Autowired
     private Queue queue;
 
-    public void send(JSONObject object){
+    public String send(JSONObject object){
         String message = object.toString();
-        rabbitTemplate.convertAndSend(this.queue.getName(), message);
+        // rabbitTemplate.sendAndReceive(this.queue.getName(), message);
+
+        String response = (String) rabbitTemplate.convertSendAndReceive(this.queue.getName(), message);
+        return response;
     }
 }
