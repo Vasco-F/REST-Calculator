@@ -9,15 +9,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.wit"} )
+@ComponentScan(basePackages = {"com.wit"} )
 @EnableRabbit
-public class RestApplication {
+public class Application {
 
 	@Value("${queue.calculator.name}")
 	private String calculatorQueue;
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 	@Bean

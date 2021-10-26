@@ -6,10 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.wit"} )
-public class CalculatorApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CalculatorApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.wit.calculator.consumer;
+package com.wit.calculator.exchange;
 import com.wit.calculator.services.CalculatorService;
 
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -7,7 +7,7 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Receiver {
+public class CalculatorConsumer {
     
     @Autowired
     private CalculatorService calculatorService;
