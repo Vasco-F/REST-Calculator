@@ -24,7 +24,7 @@ public class CalculatorController {
     @GetMapping("/sum")
     public String getSum(@RequestParam(value = "a") BigDecimal a, @RequestParam(value = "b") BigDecimal b){
 
-        JSONObject request = requestHandler("sub", a, b);
+        JSONObject request = requestHandler("sum", a, b);
 
         return producer.send(request);
     }
