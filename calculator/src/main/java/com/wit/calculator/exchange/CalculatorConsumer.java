@@ -14,7 +14,6 @@ public class CalculatorConsumer {
 
     @RabbitListener(queues = {"${queue.calculator.name}"})
     public String receive(@Payload String message){
-        System.out.println("Received message: " + message);
         return calculatorService.handleOperation(message);
     }
 }

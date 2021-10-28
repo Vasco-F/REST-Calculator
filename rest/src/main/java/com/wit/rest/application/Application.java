@@ -16,15 +16,15 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableRabbit
 public class Application {
 
-	@Value("${queue.calculator.name}")
-	private String calculatorQueue;
+	// @Value("${queue.calculator.name}")
+	// private String calculatorQueue;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
 	}
 
-	@Bean
-	public Queue queue(){
-		return new Queue(this.calculatorQueue, true);
-	}
+	// @Bean
+	// public Queue queue(){
+	// 	return new Queue(this.calculatorQueue, true);
+	// }
 }
