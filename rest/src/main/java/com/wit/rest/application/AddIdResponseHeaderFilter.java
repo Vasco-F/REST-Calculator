@@ -17,7 +17,6 @@ public class AddIdResponseHeaderFilter implements Filter{
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
-        
                 
                 HttpServletResponse httpServletResponse = (HttpServletResponse) response;
                 String uuid = UUID.randomUUID().toString();
