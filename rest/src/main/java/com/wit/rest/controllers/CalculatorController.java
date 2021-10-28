@@ -5,7 +5,6 @@ import java.math.BigDecimal;
 import com.wit.rest.exchange.CalculatorProducer;
 
 import org.json.JSONObject;
-import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,9 +16,6 @@ public class CalculatorController {
     @Autowired
     private CalculatorProducer producer;
 
-    @Autowired
-    private Logger logger;
-
     @GetMapping("/")
     public String index(){
         return "Greetings from Spring Boot!";
@@ -28,10 +24,7 @@ public class CalculatorController {
     @GetMapping("/sum")
     public String getSum(@RequestParam(value = "a") BigDecimal a, @RequestParam(value = "b") BigDecimal b){
 
-        logger.info("Sum requested for a=" + a + " and b=" + b);
-
         JSONObject request = requestHandler("sum", a, b);
-
         return producer.send(request);
     }
 
@@ -39,7 +32,6 @@ public class CalculatorController {
     public String getSub(@RequestParam(value = "a") BigDecimal a, @RequestParam(value = "b") BigDecimal b){
 
         JSONObject request = requestHandler("sub", a, b);
-
         return producer.send(request);
     }
 
@@ -47,7 +39,6 @@ public class CalculatorController {
     public String getMult(@RequestParam(value = "a") BigDecimal a, @RequestParam(value = "b") BigDecimal b){
 
         JSONObject request = requestHandler("mult", a, b);
-
         return producer.send(request);
     }
 
@@ -55,7 +46,6 @@ public class CalculatorController {
     public String getDiv(@RequestParam(value = "a") BigDecimal a, @RequestParam(value = "b") BigDecimal b){
 
         JSONObject request = requestHandler("div", a, b);
-
         return producer.send(request);
     }
 
